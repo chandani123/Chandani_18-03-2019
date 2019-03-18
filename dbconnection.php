@@ -1,4 +1,5 @@
 <?php
+
 class database {
 
     var $_sql			= '';
@@ -19,14 +20,20 @@ class database {
      * @param string Common prefix for all tables
      * @param boolean If true and there is an error, go offline
      */
-    function database() {
+    function databaseConnect() {
+		
         $servername = "localhost";
         $username = "root";
         $password = "";
         $con = new mysqli($servername, $username, $password,'mindarc_assessment');
+		
         if ($con->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
+		else
+		{
+			return $con;
+		}
     }
     function dbClose(){
         mysql_close($this->_resource);

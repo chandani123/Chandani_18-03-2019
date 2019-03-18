@@ -6,7 +6,7 @@ include("dbconnection.php");
 $connection = new database();
 $con = $connection->databaseConnect();
 
-if (isset($_POST["import"])) {
+if (isset($_REQUEST["import"])) {
     $fileName = $_FILES["file"]["tmp_name"];
  
     if ($_FILES["file"]["size"] > 0) {
@@ -37,12 +37,7 @@ if (isset($_POST["import"])) {
 			}
 			$i++; 
         }
-		?>
-			<script>
-			alert("File import successfully");
-			</script>
-			<?php 
-		
+		echo "File import successfully.";
     }
 }
 ?>
