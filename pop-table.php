@@ -18,11 +18,12 @@ if (isset($_POST["import"])) {
 			// use of $i condition : skip first row because in first row is column name.
 			if($i > 0)
 			{
-				$gender = "women";
-				if($column[2] === "M")
+				/*$gender = "women";
+				if(strtolower($column[2]) === "m")
 				{
 					$gender = "men";
-				}
+				}*/
+				$gender = $column[2];
 				$sqlInsert = "INSERT into original_data (product_code,product_label,gender)
 					   values ('" . $column[0] . "','" . $column[1] . "','" . $gender . "')";
 					   
