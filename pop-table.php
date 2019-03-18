@@ -27,7 +27,7 @@ if (isset($_POST["import"])) {
 					   values ('" . $column[0] . "','" . $column[1] . "','" . $gender . "')";
 					   
 				 try {
-                        $result = mysqli_query($con,$sql);
+                        $result = mysqli_query($con,$sqlInsert);
 						$message = "true";
                     }
                     catch(Exception $e) {
